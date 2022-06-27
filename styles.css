@@ -6,8 +6,8 @@
 
 --facebook: hsl(208, 92%, 53%);
 --twitter: hsl(203, 89%, 53%);
---instagram: linear gradient hsl(37, 97%, 70%) to hsl(329, 70%, 58%);
---youTube: hsl(348, 97%, 39%);
+--instagram: hsl(37, 97%, 70%), hsl(329, 70%, 58%);
+--youtube: hsl(348, 97%, 39%);
 }
 
 :root.light{
@@ -40,15 +40,17 @@ body{
     background: var(--bg);
     color: var(--text-light);
 }
+header{
+  background-color: var(--bg-top);
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
 
 .header{
-    background-color: var(--bg-top);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 50px 100px 200px 100px;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
+    padding: 50px 0 150px 0;
 }
 
 .toggle-darkmode{
@@ -112,29 +114,90 @@ body{
   }
 
 .social-cards{
-  margin-top: -80px;
+  margin-top: -120px;
 }
 
 .card{
   text-align: center;
   background-color: var(--card-bg);
+  border: 0;
 }
 
-.card-header{
+.card-body{
+  padding: 0rem 1rem;
+}
+
+.card-facebook{
+  border-top: 4px solid var(--facebook);
+}
+.card-twitter{
+  border-top: 4px solid var(--twitter);
+}
+.card-instagram{
+  border-top: double 4px transparent;
+  /* first gradient is for card background, second for border background */
+  background-image: linear-gradient(var(--card-bg),var(--card-bg)),  linear-gradient(to right, var(--instagram));
+  background-clip: padding-box, border-box;
+  background-origin: border-box;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+}
+.card-youtube{
+  border-top: 4px solid var(--youtube);
+}
+
+.social-card-header{
   font-size: 14px;
   color: var(--text-normal);
+  padding: 20px 0 5px 0;
 }
 .social-card-title{
   font-size: 46px;
   font-weight: 700;
   color: var(--text-normal);
+  margin-bottom: 0;
 }
 .social-card-text{
   font-size: 20px;
   font-weight: 400;
   color: var(--text-light);
+  letter-spacing: 3px;
 }
 
 .social-card-footer{
   color: var(--primary-green);
+  padding: 0 0 20px 0;
+}
+.social-card-footer-down{
+  color: var(--primary-red);
+}
+
+.overview-title{
+  font-size: 16px;
+  font-weight: 400;
+}
+.card-overview{
+  padding: 10px 20px;
+}
+.overview-card-top{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0 10px 0;
+}
+
+.overview-card-bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.overview-percentage{
+  color: var(--primary-green);
+}
+
+.overview-amount{
+  font-size: 20px;
+  font-weight: 700;
 }
