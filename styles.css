@@ -15,6 +15,7 @@
 --bg:hsl(0, 0%, 100%);
 --bg-top: hsl(225, 100%, 98%);
 --card-bg: hsl(227, 47%, 96%);
+--card-bg-hover: hsl(0, 0%, 76%);
 --text-dark:hsl(230, 17%, 14%);
 --text-light:hsl(228, 12%, 44%);
 --text-normal: black;
@@ -25,6 +26,7 @@
 --bg:hsl(230, 17%, 14%);
 --bg-top: hsl(232, 19%, 15%);
 --card-bg: hsl(228, 28%, 20%);
+--card-bg-hover: hsl(230, 23%, 39%);
 --text-dark:hsl(228, 34%, 66%);
 --text-light:hsl(0, 0%, 100%);
 --text-normal:white;
@@ -67,8 +69,9 @@ header{
     justify-content: center;
     align-items: start;
   }
-  .toggle-darkmode{
-    justify-content: space-between;
+  .toggle-wrapper{
+    padding: 10px 0 10px 118px;
+
   }
 }
 
@@ -96,7 +99,7 @@ header{
     border: 2px solid white;
     border-radius: 50%;
     position: absolute;
-    top: 2px;
+    top: 3px;
     left: 3px;
     display: grid;
     place-content: center;
@@ -115,6 +118,10 @@ header{
 
 .social-cards{
   margin-top: -120px;
+}
+
+.card:hover{
+  background-color: var(--card-bg-hover);
 }
 
 .card{
@@ -142,6 +149,10 @@ header{
   border-left: 0;
   border-right: 0;
   border-bottom: 0;
+}
+
+.card-hover:hover{
+  background-color: var(--card-bg-hover);
 }
 .card-youtube{
   border-top: 4px solid var(--youtube);
@@ -178,7 +189,8 @@ header{
   font-weight: 400;
 }
 .card-overview{
-  padding: 10px 20px;
+  padding: 20px 20px;
+  margin-top: 10px;
 }
 .overview-card-top{
   display: flex;
@@ -196,8 +208,18 @@ header{
 .overview-percentage{
   color: var(--primary-green);
 }
+.overview-percentage--red{
+  color: var(--primary-red);
+}
 
 .overview-amount{
   font-size: 20px;
   font-weight: 700;
+}
+
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0px;
 }
